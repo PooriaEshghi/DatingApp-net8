@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -10,6 +10,9 @@ import { FormsModule } from '@angular/forms';
 })
 export class RegisterComponent {
   model: any = {}
+  // @Input()
+  // usersFormHomeComponent:any;
+  usersFormHomeComponent = input.required<any>()
 
   register(){
     console.log(this.model);
