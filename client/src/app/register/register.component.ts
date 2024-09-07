@@ -1,26 +1,35 @@
-import { Component, input, Input } from '@angular/core';
+import { Component, inject, input, output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { AccountService } from '../_services/account.service';
 
 @Component({
   selector: 'app-register',
   standalone: true,
   imports: [FormsModule],
   templateUrl: './register.component.html',
-  styleUrl: './register.component.css'
+  styleUrl: './register.component.css',
 })
 export class RegisterComponent {
-  model: any = {}
+  private accountService = inject(AccountService)
+  model: any = {};
   // @Input()
   // usersFormHomeComponent:any;
-  usersFormHomeComponent = input.required<any>()
+  // @Output()
+  // cancelRegister = new EventEmitter();
+  cancelRegister = output<boolean>();
+  usersFormHomeComponent = input.required<any>();
 
-  register(){
-    console.log(this.model);
+  register() {
+    this.accountService.register(this.model).subscribe({
+      next: response => {
+        console.log(response);
+        this.cancel();
+      },
+      error: error => console.log(error)
 
+    })
   }
-  cancel(){
-    console.log('cancelled');
-
+  cancel() {
+    this.cancelRegister.emit(false);
   }
-
 }

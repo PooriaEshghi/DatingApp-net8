@@ -19,6 +19,9 @@ export class HomeComponent implements OnInit {
   registerToggle() {
     this.registerMode = !this.registerMode;
   }
+  cancelRegisterMode(event: boolean){
+    this.registerMode = event;
+  }
   getUsers() {
     this.http.get('https://localhost:5001/api/users').subscribe({
       next: (response) => (this.users = response),
@@ -26,4 +29,5 @@ export class HomeComponent implements OnInit {
       complete: () => console.log('Request has completed'),
     });
   }
+
 }
