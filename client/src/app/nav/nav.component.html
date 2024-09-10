@@ -5,16 +5,19 @@
     <ul class="navbar-nav me-auto mb-2 mb-md-0">
       @if(accountService.currentUser()){
       <li class="nav-item">
-        <a class="nav-link active" aria-current="page" routerLinkActive="active" routerLink="/members">Matches</a>
+        <a class="nav-link active"  routerLinkActive="active" routerLink="/members">Matches</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" aria-current="page" routerLinkActive="active" routerLink="/lists">Lists</a>
+        <a class="nav-link active"  routerLinkActive="active" routerLink="/lists">Lists</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" aria-current="page" routerLinkActive="active" routerLink="/messages">Messages</a>
+        <a class="nav-link active"  routerLinkActive="active" routerLink="/messages">Messages</a>
       </li>
 
     }
+    <li class="nav-item">
+      <a class="nav-link active"  routerLinkActive="active" routerLink="/errors">Errors</a>
+    </li>
     </ul>
     @if (accountService.currentUser()) {
     <div class="dropdown" dropdown>
