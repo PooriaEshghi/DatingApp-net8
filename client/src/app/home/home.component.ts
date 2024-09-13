@@ -13,6 +13,20 @@ export class HomeComponent implements OnInit {
   http = inject(HttpClient);
   registerMode = false;
   users: any;
+  constructor(){
+
+    const log = this.debounce(() => console.log('Debounced!'), 2000);
+    window.addEventListener('resize', log);
+
+  }
+  debounce = (func: Function, delay: number) => {
+    let timeout: any;  // Replacing NodeJS.Timeout with any
+    return (...args: any[]) => {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => func.apply(this, args), delay);
+    };
+  };
+
   ngOnInit(): void {
     this.getUsers();
   }
