@@ -108,7 +108,7 @@
     "Country": "Pakistan",
     "Photos": [
       {
-        "Url": "https://randomuser.me/api/portraits/women/87.jpg",
+        "Url": "https://randomuser.me/api/portraits/men/87.jpg",
         "IsMain": true
       }
     ]
@@ -127,7 +127,7 @@
     "Country": "French Guiana",
     "Photos": [
       {
-        "Url": "https://randomuser.me/api/portraits/women/86.jpg",
+        "Url": "https://randomuser.me/api/portraits/men/86.jpg",
         "IsMain": true
       }
     ]
@@ -146,7 +146,7 @@
     "Country": "Iran",
     "Photos": [
       {
-        "Url": "https://randomuser.me/api/portraits/women/40.jpg",
+        "Url": "https://randomuser.me/api/portraits/men/40.jpg",
         "IsMain": true
       }
     ]
@@ -165,7 +165,7 @@
     "Country": "Portugal",
     "Photos": [
       {
-        "Url": "https://randomuser.me/api/portraits/women/14.jpg",
+        "Url": "https://randomuser.me/api/portraits/men/14.jpg",
         "IsMain": true
       }
     ]
@@ -184,7 +184,7 @@
     "Country": "Japan",
     "Photos": [
       {
-        "Url": "https://randomuser.me/api/portraits/women/58.jpg",
+        "Url": "https://randomuser.me/api/portraits/men/58.jpg",
         "IsMain": true
       }
     ]
