@@ -17,8 +17,6 @@ import { ButtonsModule } from 'ngx-bootstrap/buttons';
 })
 export class MemberListComponent implements OnInit {
   memberService = inject(MembersService);
-  private accountService = inject(AccountService)
-  userParams = new UserParams(this.accountService.currentUser());
   genderList = [{value: 'male', display: 'Males'}, {value: 'female', display: 'Females'}]
 
   ngOnInit(): void {
@@ -26,16 +24,16 @@ export class MemberListComponent implements OnInit {
   }
 
   resetFilter(){
-    this.userParams = new UserParams(this.accountService.currentUser());
+    this.memberService.resetParams();
     this.loadMembers();
   }
 
   loadMembers(){
-    this.memberService.getMembers(this.userParams);
+    this.memberService.getMembers();
   }
   pageChanged(event: any){
-    if(this.userParams.pageNumber !== event.page){
-      this.userParams.pageNumber = event.page;
+    if(this.memberService.userParams().pageNumber !== event.page){
+      this.memberService.userParams().pageNumber = event.page;
       this.loadMembers();
     }
   }

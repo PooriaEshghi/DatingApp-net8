@@ -11,7 +11,7 @@
         class="form-control ms-1"
         style="width: 70px"
         name="minAge"
-        [(ngModel)]="userParams.minAge">
+        [(ngModel)]="memberService.userParams().minAge">
       </div>
       <div class="d-flex mx-2">
         <label class="col-form-label">Age to:</label>
@@ -20,7 +20,7 @@
         class="form-control ms-1"
         style="width: 70px"
         name="maxAge"
-        [(ngModel)]="userParams.maxAge">
+        [(ngModel)]="memberService.userParams().maxAge">
       </div>
       <div class="d-flex mx-2">
         <label class="col-form-label">Show: </label>
@@ -28,7 +28,7 @@
         name="gender"
         style="width: 130px;"
         class="form-select ms-1"
-        [(ngModel)]="userParams.gender"
+        [(ngModel)]="memberService.userParams().gender"
         >
           @for (gender of genderList; track gender.value) {
             <option [value]="gender.value">
@@ -47,7 +47,7 @@
           name="orderBy"
           (click)="loadMembers()"
           btnRadio="lastActive"
-          [(ngModel)]="userParams.orderBy"
+          [(ngModel)]="memberService.userParams().orderBy"
           >Last Active</button>
           <button
           type="button"
@@ -55,7 +55,7 @@
           name="orderBy"
           (click)="loadMembers()"
           btnRadio="created"
-          [(ngModel)]="userParams.orderBy"
+          [(ngModel)]="memberService.userParams().orderBy"
           >Newest Members</button>
         </div>
       </div>
@@ -77,6 +77,7 @@
     [itemsPerPage]="memberService.paginatedResult()?.pagination!.itemsPerPage"
     (pageChanged)="pageChanged($event)"
     [maxSize]="10"
+    [(ngModel)]="memberService.paginatedResult()?.pagination!.currentPage"
     previousText="&lsaquo;"
     nextText="&rsaquo;"
     firstText="&laquo;"
